@@ -12,7 +12,7 @@ import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 import ResetPassword from './components/ResetPassword'
 import Scholarship from './pages/Scholarship'
-import ScholarshipInfo from './pages/ScholarshipInfo'
+import ScholarshipInfo from './components/ScholarshipInfo'
 import ScholarshipForm from './pages/ScholarshipForm'
 import { userProfiles, scholarshipDetails } from './data'
 
