@@ -1,8 +1,13 @@
 import React from 'react'
+import Scholarship from './Scholarship'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (
-    <div>Home</div>
+      <>
+          <Scholarship/>
+          <Footer/>
+      </>
   )
 }
 

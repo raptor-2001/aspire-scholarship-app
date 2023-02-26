@@ -3,13 +3,19 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Sources from './pages/Sources'
 import Profile from './pages/Profile'
-import Login from './pages/Login'
+import Login from './components/Login'
 import Navbar from './components/Navbar'
 
 import './App.css'
 import RequireAuth from './components/RequireAuth'
-import SignIn from './components/SignIn'
-import SignUp from './components/SignUp'
+import SignIn from './pages/SignIn'
+import SignUp from './pages/SignUp'
+import ResetPassword from './components/ResetPassword'
+import Scholarship from './pages/Scholarship'
+import ScholarshipInfo from './pages/ScholarshipInfo'
+import ScholarshipForm from './pages/ScholarshipForm'
+import { userProfiles, scholarshipDetails } from './data'
+
 
 
 const App = () => {
@@ -26,13 +32,25 @@ const App = () => {
             path="/profile" 
             element={
             <RequireAuth>
-              <Profile/>
+              <Profile userProfiles={userProfiles}/>
             </RequireAuth>
             } 
           />
+          <Route 
+            path="/scholarship-form/:orgname" 
+            element={
+            <RequireAuth>
+              <ScholarshipForm scholarshipDetails={scholarshipDetails}/>
+            </RequireAuth>
+            } 
+          />
+          
+          <Route path="/scholarship" element={<Scholarship />} />
+          <Route path="/scholarship-info/:title" element={<ScholarshipInfo/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/signin" element={<SignIn/>} />
           <Route path="/singup" element={<SignUp/>} />
+          <Route path="/reset-password" element={<ResetPassword/>} />
         </Routes>
 
     </div>
